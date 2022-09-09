@@ -16,7 +16,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { cartContext } from './contexts/contexts'
 import { useContext } from 'react'
-const LinkItem = ({ href, path, target, children, isDisabled, ...props }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   //   const active = path === href
   //   const inactiveColor = useColorModeValue('black.200', "'whiteAlpha.900'")
   //   const activeColor = useColorModeValue('gray.500', 'whiteAlpha.600')
@@ -27,7 +27,7 @@ const LinkItem = ({ href, path, target, children, isDisabled, ...props }) => {
         // bg={active ? 'grassTeal' : undefined}
         // color={active ? activeColor : inactiveColor}
         target={target}
-        isDisabled={isDisabled}
+        // isDisabled={isDisabled}
         {...props}
       >
         {children}
