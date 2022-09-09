@@ -1,8 +1,8 @@
-
-
-
+import { useContext } from 'react'
+import { cartContext } from '../components/contexts/contexts'
 function HomePage() {
-  return <div>Welcome to Next.js!</div>
+  const { cart } = useContext(cartContext)
+  return <div>Welcome to Next.js! {cart[0].id}</div>
 }
 
 export default HomePage
