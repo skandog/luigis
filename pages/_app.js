@@ -31,7 +31,7 @@ const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider>
       <cartContext.Provider value={{ cart, addToCart, removeFromCart }}>
-        <Layout>
+        <Layout router={router}>
           <Component {...pageProps} key={router.route} />
         </Layout>
       </cartContext.Provider>
