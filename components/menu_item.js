@@ -32,7 +32,6 @@ const MenuItem = ({ children, href, title, thumbnail, onClick, item }) => {
           wrap="wrap"
           align="center"
           justify="space-between"
-          onClick={onOpen}
         >
           <Image
             src={thumbnail}
@@ -46,7 +45,7 @@ const MenuItem = ({ children, href, title, thumbnail, onClick, item }) => {
           <Button p={2} marginX={1}>
             Add to cart
           </Button>
-          <Button>More info</Button>
+          <Button onClick={onOpen}>More info</Button>
         </Container>
       </Box>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -67,7 +66,6 @@ const MenuItem = ({ children, href, title, thumbnail, onClick, item }) => {
         </ModalContent>
       </Modal>
     </>
-
   )
 }
 
