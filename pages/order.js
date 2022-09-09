@@ -6,18 +6,18 @@ import { Button } from '@chakra-ui/react'
 
 const Order = () => {
   const [page, setPage] = useState(0)
-  const [items, setItems] = useState(dummydata)
-  // useEffect(() => {
-  //   async function FetchPage() {
-  //     let response = await fetch(
-  //       `https://api.spoonacular.com/food/menuItems/search?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&query=pizza&offset=${page}`
-  //     )
-  //     let json = await response.json()
-  //     console.log(json)
-  //     setItems([...json.menuItems])
-  //   }
-  //   FetchPage()
-  // }, [page])
+  const [items, setItems] = useState([])
+  useEffect(() => {
+    async function FetchPage() {
+      let response = await fetch(
+        `https://api.spoonacular.com/food/menuItems/search?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&query=pizza&offset=${page}`
+      )
+      let json = await response.json()
+      console.log(json)
+      setItems([...json.menuItems])
+    }
+    FetchPage()
+  }, [page])
 
   return (
     <Container>
