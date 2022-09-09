@@ -1,11 +1,9 @@
 import { Container, Box, Flex, Img, Text, Link, Button } from '@chakra-ui/react'
 import { useContext } from 'react'
-<<<<<<< HEAD
 import { cartContext } from '../components/contexts/contexts'
 import { boughtContext } from '../components/contexts/contexts'
 
 function FavCard({ item }) {
-  console.log(item)
   const { addToCart } = useContext(cartContext)
   return (
     <Flex direction="column" align="center" gap="20px">

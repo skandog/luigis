@@ -2,6 +2,7 @@ import { Container, Menu } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import dummydata from '../lib/dummy.js'
 import MenuItem from '../components/menu_item.js'
+
 const Order = () => {
   const [page, setPage] = useState(0)
   const [items, setItems] = useState(dummydata)
