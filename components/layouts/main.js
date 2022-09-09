@@ -14,7 +14,7 @@ const Main = ({ children, router }) => {
         />
         <title>Luigis</title>
       </Head>
-      {/* <Navbar path={router.asPath} /> */}
+      <Navbar path={router.asPath} />
 
       <Container maxW="container.lg" pt={6}>
         {children}

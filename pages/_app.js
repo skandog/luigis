@@ -64,8 +64,9 @@ const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider>
       <cartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+
         <boughtContext.Provider value={{ boughtItems, updateBoughtItems }}>
-          <Layout>
+        <Layout router={router}>
             <Component {...pageProps} key={router.route} />
           </Layout>
         </boughtContext.Provider>
