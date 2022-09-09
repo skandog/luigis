@@ -1,5 +1,6 @@
 import { Container, Box, Flex, Img, Text, Link, Button } from '@chakra-ui/react'
 import { useContext } from 'react'
+<<<<<<< HEAD
 import { cartContext } from '../components/contexts/contexts'
 import { boughtContext } from '../components/contexts/contexts'
 
@@ -56,6 +57,7 @@ function HomePage() {
         qui officia deserunt mollit anim id est laborum.
       </Text>
     </Flex>
+
   )
 }
 

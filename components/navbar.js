@@ -14,7 +14,8 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-
+import { cartContext } from './contexts/contexts'
+import { useContext } from 'react'
 const LinkItem = ({ href, path, target, children, isDisabled, ...props }) => {
   //   const active = path === href
   //   const inactiveColor = useColorModeValue('black.200', "'whiteAlpha.900'")
@@ -37,6 +38,7 @@ const LinkItem = ({ href, path, target, children, isDisabled, ...props }) => {
 
 const Navbar = props => {
   const { path } = props
+  const { cart } = useContext(cartContext)
 
   return (
     <Box
@@ -78,9 +80,14 @@ const Navbar = props => {
           <LinkItem href="/order" path={path}>
             Order
           </LinkItem>
-          <LinkItem href="/checkout" isDisabled={true} path={path}>
-            Checkout
-          </LinkItem>
+          {cart.length >= 2 ? (
+            <LinkItem href="/checkout" path={path}>
+              Checkout
+            </LinkItem>
+          ) : (
+            <button disabled>Checkout</button>
+          )}
+
           {/* <LinkItem
               target="_blank"
               href="https://github.com/skandog/luigis"
