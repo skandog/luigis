@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/layouts/main.js'
-import { cartContext } from '../components/contexts/contexts'
+import { cartContext, boughtContext } from '../components/contexts/contexts'
 const Website = ({ Component, pageProps, router }) => {
   const [cart, setCart] = useState([{ id: 1 }])
   const [boughtItems, setBoughtItems] = useState([
