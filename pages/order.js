@@ -22,6 +22,7 @@ const Order = () => {
       {items.map((item, index) => {
         return (
           <MenuItem
+            item={item}
             title={item.title}
             key={index}
             thumbnail={item.image}

@@ -6,8 +6,14 @@ import {
   Image,
   Button
 } from '@chakra-ui/react'
-
-const MenuItem = ({ children, href, title, thumbnail }) => {
+import { cartContext } from './contexts/contexts'
+import { useContext } from 'react'
+const MenuItem = ({ children, href, title, thumbnail, item }) => {
+  const { addToCart } = useContext(cartContext)
+  function handleClick() {
+    console.log('handling click')
+    addToCart(item)
+  }
   return (
     <Box w="100%" textAlign="left">
       <Container
@@ -26,11 +32,10 @@ const MenuItem = ({ children, href, title, thumbnail }) => {
           loading="lazy"
           w={20}
         />
-        <LinkOverlay href={href} target="_blank">
-          <Text mt={2}>{title}</Text>
-        </LinkOverlay>
-        <Button p={2}
-        marginX={1}>Add to cart</Button>
+        <Text mt={2}>{title}</Text>
+        <Button p={2} marginX={1} onClick={handleClick}>
+          Add to cart
+        </Button>
         <Button>More info</Button>
       </Container>
     </Box>

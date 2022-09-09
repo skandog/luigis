@@ -87,19 +87,6 @@ const Navbar = props => {
           ) : (
             <button disabled>Checkout</button>
           )}
-
-          {/* <LinkItem
-              target="_blank"
-              href="https://github.com/skandog/luigis"
-              path={path}
-              display="inline-flex"
-              alignItems="center"
-              style={{ gap: 4 }}
-              pl={2}
-            >
-              <IoLogoGithub />
-              Source
-            </LinkItem> */}
         </Stack>
 
         <Box z-index={5} flex={1} align="right">
