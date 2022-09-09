@@ -48,7 +48,7 @@ const Website = ({ Component, pageProps, router }) => {
     for (let i = 0; i < boughtItems.length; i++) {
       if (item.id === boughtItems[i].id) {
         let temp = boughtItems
-        temp[i].count++
+        temp[i].count += item.count
         console.log('found in bought')
         setBoughtItems([...temp])
         return
@@ -57,18 +57,21 @@ const Website = ({ Component, pageProps, router }) => {
     setBoughtItems([...boughtItems, { ...item, count: 1 }])
   }
   function addToCart(item) {
+    console.log('adding to cart')
     if (cart.length === 0) {
       setCart([{ ...item, count: 1 }])
     }
     for (let i = 0; i < cart.length; i++) {
       if (item.id === cart[i].id) {
         let temp = cart
-        temp.count++
+        temp[i].count++
         setCart([...temp])
+        console.log('new cart:, ', temp)
         return
       }
     }
     setCart([...cart, { ...item, count: 1 }])
+    console.log('new cart:, ', [...cart, { ...item, count: 1 }])
   }
 
   function removeFromCart(item) {

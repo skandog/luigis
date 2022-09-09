@@ -2,6 +2,7 @@ import { Container, Menu } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import dummydata from '../lib/dummy.js'
 import MenuItem from '../components/menu_item.js'
+import { Button } from '@chakra-ui/react'
 
 const Order = () => {
   const [page, setPage] = useState(0)
@@ -23,6 +24,7 @@ const Order = () => {
       {items.map((item, index) => {
         return (
           <MenuItem
+            item={item}
             title={item.title}
             key={index}
             thumbnail={item.image}
@@ -31,20 +33,21 @@ const Order = () => {
           />
         )
       })}
-      <button
+      <Button
         onClick={() => {
           setPage(page + 1)
         }}
+        style={{}}
       >
         Next
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           setPage(page - 1)
         }}
       >
         Prev
-      </button>
+      </Button>
     </Container>
   )
 }

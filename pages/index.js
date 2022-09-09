@@ -13,15 +13,17 @@ function FavCard({ item }) {
       <Img src={item.image}></Img>
 
       <Button bg="green" onClick={() => addToCart(item)}>
-        <Text>Add to cart 🤌</Text>
+        <Text>Add to cart</Text>
       </Button>
     </Flex>
   )
 }
 function HomePage() {
-  const { cart } = useContext(cartContext)
   const { boughtItems } = useContext(boughtContext)
-
+  boughtItems.sort((a, b) => {
+    return b.count - a.count
+  })
+  console.log('bought', boughtItems)
   return (
     <Flex
       direction="column"
@@ -55,7 +57,6 @@ function HomePage() {
         qui officia deserunt mollit anim id est laborum.
       </Text>
     </Flex>
-
   )
 }
 

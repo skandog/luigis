@@ -14,6 +14,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './theme-toggle.js'
 import { cartContext } from './contexts/contexts'
 import { useContext } from 'react'
 const LinkItem = ({ href, path, target, children, ...props }) => {
@@ -39,7 +40,6 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 const Navbar = props => {
   const { path } = props
   const { cart } = useContext(cartContext)
-
   return (
     <Box
       position="static"
@@ -87,23 +87,10 @@ const Navbar = props => {
           ) : (
             <button disabled>Checkout</button>
           )}
-
-          {/* <LinkItem
-              target="_blank"
-              href="https://github.com/skandog/luigis"
-              path={path}
-              display="inline-flex"
-              alignItems="center"
-              style={{ gap: 4 }}
-              pl={2}
-            >
-              <IoLogoGithub />
-              Source
-            </LinkItem> */}
         </Stack>
 
         <Box z-index={5} flex={1} align="right">
-          {/* <ThemeToggleButton /> */}
+          <ThemeToggleButton />
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">

@@ -14,6 +14,7 @@ import {
   ModalCloseButton,
   Lorem
 } from '@chakra-ui/react'
+
 import { useDisclosure } from '@chakra-ui/react'
 import { cartContext } from '../components/contexts/contexts'
 import { useContext } from 'react'
@@ -66,6 +67,7 @@ const MenuItem = ({ children, href, title, thumbnail, onClick, item }) => {
         </ModalContent>
       </Modal>
     </>
+
   )
 }
 
