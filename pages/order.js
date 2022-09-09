@@ -11,7 +11,7 @@ const Order = () => {
       console.log(json)
       setItems([...json.menuItems])
     }
-    FetchPage()
+    // FetchPage()
   }, [page])
   return (
     <main>
