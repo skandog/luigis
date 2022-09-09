@@ -77,6 +77,9 @@ const Navbar = props => {
           <LinkItem href="/order" path={path}>
             Order
           </LinkItem>
+          <LinkItem href="/checkout" path={path}>
+            Checkout
+          </LinkItem>
           {/* <LinkItem
               target="_blank"
               href="https://github.com/skandog/luigis"
