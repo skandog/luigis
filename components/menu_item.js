@@ -29,7 +29,6 @@ const MenuItem = ({ children, href, title, thumbnail }) => {
         <LinkOverlay href={href} target="_blank">
           <Text mt={2}>{title}</Text>
         </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
         <Button p={2}
         marginX={1}>Add to cart</Button>
         <Button>More info</Button>
