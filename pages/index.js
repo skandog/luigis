@@ -1,24 +1,27 @@
 import { Container, Box, Flex, Img, Text, Link, Button } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { cartContext } from '../components/contexts/contexts'
+import { boughtContext } from '../components/contexts/contexts'
 
-function FavCard(item) {
+function FavCard({ item }) {
+  console.log(item)
+  const { addToCart } = useContext(cartContext)
   return (
     <Flex direction="column" align="center" gap="20px">
       <Text align="center" fontSize="20px">
-        Item Item item
+        {item.title}
       </Text>
-      <Img src="https://images.spoonacular.com/file/wximages/387713-312x231.png"></Img>
-      <Link>
-        <Button bg="green">
-          <Text>Add to cart 🤌</Text>
-        </Button>
-      </Link>
+      <Img src={item.image}></Img>
+
+      <Button bg="green" onClick={() => addToCart(item)}>
+        <Text>Add to cart 🤌</Text>
+      </Button>
     </Flex>
   )
 }
 function HomePage() {
   const { cart } = useContext(cartContext)
+  const { boughtItems } = useContext(boughtContext)
 
   return (
     <Flex
@@ -31,11 +34,11 @@ function HomePage() {
     >
       <Text fontSize="30px">Customers' favourites</Text>
       <Flex gap="10px" justify="space-evenly">
-        <FavCard />
-        <FavCard />
-        <FavCard />
+        <FavCard item={boughtItems[0]} />
+        <FavCard item={boughtItems[1]} />
+        <FavCard item={boughtItems[2]} />
       </Flex>
-      <Link alignSelf="center" mt="30px">
+      <Link alignSelf="center" mt="30px" href="/order">
         <Button bg="green">
           <Text>View full menu 🍕</Text>
         </Button>
