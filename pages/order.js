@@ -27,6 +27,7 @@ const Order = () => {
             key={index}
             thumbnail={item.image}
             alt={item.title}
+            item={item}
           />
         )
       })}
